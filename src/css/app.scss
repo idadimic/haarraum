@@ -1,0 +1,366 @@
+@import "reset.scss";
+
+@font-face {
+    font-family: "Outsmile";
+    src: url(fonts/Outsmile_Signature.otf);
+}
+
+$primary-color: #282828;
+$secondary-color: rgba(144, 241, 226, 0.5);
+
+@mixin mq-medium {
+    @media (max-width: 1000px) { 
+        @content; 
+    }
+}
+@mixin mq-smaller {
+    @media (max-width: 760px) { 
+        @content; 
+    }
+}
+@mixin mq-mobile {
+    @media (max-width: 485px) { 
+        @content; 
+    }
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff;
+    color: #000;
+    font-size: 20px;
+    letter-spacing: 0.09em;
+    line-height: 1.3;
+    overflow-x: hidden;
+
+    @include mq-medium {    
+        font-size: 18px; 
+    }
+}
+a {
+    text-decoration: none;
+}
+.bg-text h3 {
+    font-family: "Outsmile";
+    color: $secondary-color;
+    font-size: 200px;
+
+    @include mq-medium {    
+        font-size: 150px; 
+    }
+}
+p.bold {
+    font-weight: 700;
+    text-transform: uppercase;
+}
+header {
+    background-color: $primary-color;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    a.header-logo {
+        text-transform: uppercase;
+        font-size: 20px;
+        color: #fff;
+        @include mq-smaller {    
+            font-size: 18px; 
+        }
+    }
+
+    nav {
+        a {
+            color: #fff;
+            text-transform: uppercase;
+            font-size: 20px;
+            margin-left: 30px;
+
+            @include mq-smaller {    
+                font-size: 18px; 
+            }
+        }
+    }
+}
+section.intro {
+    height: 100vh;
+    
+    div.hero {
+        background-image: url(images/Frisur_Haarraum.jpg);
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+
+        img {
+            width: 800px;
+            margin-top: 84px;
+
+            @include mq-medium {    
+                width: 700px; 
+            }
+
+            @include mq-smaller {    
+                width: 500px; 
+            }
+        }
+    }
+}
+
+section.team {
+    .copy {
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        width: 40vw;
+
+        @include mq-medium {    
+            width: 50vw; 
+         }
+
+         @include mq-smaller {    
+            width: 60vw;  
+        }
+
+        h2 {
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        p {
+            margin-top: 20px;
+        }
+    }
+    .bg-text {
+        position: absolute;
+        top: 0;
+        z-index: -1;
+        left: -25vw;
+    }
+    .team-img {
+
+        @include mq-smaller {    
+            flex-wrap: wrap; 
+        }
+
+        .team-member {
+            margin-left: 20px;
+            margin-right: 20px;
+
+            @include mq-smaller {    
+                margin-bottom: 40px;
+            }
+
+            .team-desc {
+                @include mq-medium {    
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+}
+
+section.col-container {
+    display: grid;
+    grid-auto-rows: 1fr;
+
+    @include mq-smaller {    
+        grid-auto-rows: 0.5fr;
+    }
+}
+
+div.grid,
+div.grid-2,
+div.grid-3  {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    @include mq-medium {    
+        grid-template-columns: 1fr;
+    }
+}
+
+div.grid {
+    background-color: $primary-color;
+    
+    .copy {
+        color: #fff;
+        position: relative;
+        h2 {
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        p {
+            margin-top: 20px;
+            z-index: 10;
+        }
+        .bg-text {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .grid-img-1 {
+        background-image: url(images/Raum_Platzhalter.jpg);
+        background-position: center;
+        background-size: cover;
+
+        @include mq-medium {    
+            height: 100vh; 
+            order: -1;
+        }
+    }
+}
+
+div.grid-2 {
+    background-color: $primary-color;
+
+    .copy {
+        color: #fff;
+        position: relative;
+        h2 {
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        p {
+            margin-top: 20px;
+            z-index: 5;
+            margin-bottom: 50px;
+        }
+        .button {
+            border: solid 2px #fff;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 8px 24px;
+        }
+        .bg-text {
+            position: absolute;
+            top: 55%;
+            left: 55%;
+            transform: translate(-50%, -100%);
+        }
+    }
+    .grid-img-2 {
+        background-image: url(images/Frisur_Haarraum.jpg);
+        background-position: center;
+        background-size: cover;
+
+        @include mq-medium {    
+            height: 100vh; 
+        }
+    }
+}
+
+section.hours {
+    .copy {
+        justify-content: flex-end;
+        position: relative;
+
+        @include mq-smaller {    
+            flex-direction: column;
+            padding-left: 0;
+        }
+        h2 {
+            margin-right: 60px;
+            text-transform: uppercase;
+        }
+        .days {
+            z-index: 50;
+        }
+        .day {
+            border-bottom: solid 1px #000;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+        .note {
+            margin-top: 15px;
+        }
+        .bg-text {
+            position: absolute;
+            left: 100px;
+        }
+    }
+}
+
+div.grid {
+    background-color: $primary-color;
+    
+    .copy {
+        color: #fff;
+        position: relative;
+        h2 {
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+        p {
+            margin-top: 20px;
+            z-index: 10;
+        }
+        .bg-text {
+            position: absolute;
+            bottom: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    .grid-img-1 {
+        background-image: url(images/Raum_Platzhalter.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+div.grid-3 {
+    background-color: #eee;
+    .grid-img {
+        background-image: url(images/Bild_Kontakt_Platzhalter.jpg);
+        background-position: center;
+        background-size: cover;
+        @include mq-medium {    
+            height: 100vh; 
+        }
+        .contact-copy {
+            color: #fff;
+            h2 {
+                text-transform: uppercase;
+                margin-bottom: 30px;
+            }
+            p {
+                margin-top: 20px;
+                z-index: 5;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: $primary-color;
+
+    a.link {
+        text-decoration: none;
+        color: #fff;
+        text-transform: uppercase;
+        margin-right: 50px;
+    }
+
+    nav {
+        a img {
+            width: 24px;
+            margin-left: 5px;
+            margin-right: 5px;
+        }
+    }
+}
+
+section.policy {
+    margin-top: 190px;
+    margin-bottom: 100px;
+
+    p {
+        margin-bottom: 20px;
+    }
+}
