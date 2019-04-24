@@ -181,6 +181,10 @@ section.intro {
 }
 
 section.team {
+
+    @include mq-smaller {
+        padding-top: 6rem;
+    }
     .copy {
         margin-left: auto;
         margin-right: auto;
@@ -277,7 +281,7 @@ section.team {
             width:100vw;
         }
         @include mq-smaller {    
-            padding: 2rem; 
+            padding: 6rem 2rem 6rem 2rem; 
         }
         .contact-copy {
             color: #fff;
