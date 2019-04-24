@@ -128,8 +128,8 @@ header {
     position: fixed;
     background-color: #282828;
     width: 100vw;
-    transition: all ease .3s;
-    -webkit-transition: all ease .3s;
+    transition: all ease .5s;
+    -webkit-transition: all ease .5s;
     opacity: 0;
     z-index: -1;
 
@@ -146,7 +146,7 @@ header {
 
 .menu-full.visible {
     opacity: 1;
-    z-index: 2;
+    z-index: 100;
 }
 
 section.intro {
@@ -161,6 +161,10 @@ section.intro {
         img {
             width: 800px;
             margin-top: 84px;
+
+            @include mq-large {    
+                width: 1800px; 
+            }
 
             @include mq-medium {    
                 width: 700px; 
@@ -273,7 +277,7 @@ section.team {
             width:100vw;
         }
         @include mq-smaller {    
-            padding: 3rem; 
+            padding: 2rem; 
         }
         .contact-copy {
             color: #fff;
@@ -382,6 +386,9 @@ section.team {
         }
         @include mq-medium {    
             width:100vw; 
+        }
+        @include mq-smaller {
+            order: 2;
         }
     }
 }
@@ -499,6 +506,9 @@ footer {
         color: #fff;
         text-transform: uppercase;
         margin-right: 50px;
+        @include mq-smaller {    
+            margin-right: 20px;
+        }
     }
 
     nav {
@@ -506,6 +516,9 @@ footer {
             width: 22px;
             margin-left: 5px;
             margin-right: 5px;
+            @include mq-large {    
+                width: 32px;
+            }
         }
     }
 }
@@ -514,7 +527,18 @@ section.policy {
     margin-top: 190px;
     margin-bottom: 100px;
 
+    @include mq-medium {    
+        margin-top: 90px;
+        padding: 3rem;
+        flex-direction: column;
+    }
+    .copy {
+        @include mq-medium {    
+            width:100%;
+        }
+    }
     p {
         margin-bottom: 20px;
+        overflow-wrap: break-word;
     }
 }
