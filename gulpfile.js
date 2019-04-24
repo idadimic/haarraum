@@ -32,6 +32,11 @@ gulp.task("html", function() {
         .pipe(gulp.dest("dist"))
 })
 
+gulp.task("js", function() {
+    return gulp.src("src/js/*.js")
+        .pipe(gulp.dest("dist/js"))
+})
+
 gulp.task("fonts", function() {
     return gulp.src("src/fonts/*")
         .pipe(gulp.dest("dist/fonts"))
@@ -53,8 +58,9 @@ gulp.task("watch", function() {
 
     gulp.watch("src/*.html", ["html"]).on("change", browserSync.reload)
     gulp.watch("src/css/app.scss", ["sass"])
+    gulp.watch("src/js/*.js", ["js"])
     gulp.watch("src/fonts/*", ["fonts"])
     gulp.watch("src/images/*", ["images"])
 })
 
-gulp.task('default', ["html", "sass", "fonts", "images", "watch"])
+gulp.task('default', ["html", "sass", "js", "fonts", "images", "watch"])
