@@ -231,9 +231,17 @@ section.team {
         }
     }
     .team-img {
+        width: 80vw;
+        margin-left: auto;
+        margin-right: auto;
+
+        @include mq-large {    
+            width: 60vw;
+        }
 
         @include mq-smaller {    
             flex-wrap: wrap; 
+            width: 100vw;
         }
 
         .team-member {
@@ -444,10 +452,14 @@ section.team {
         iframe {
             width: 100vw;
             height: 100vh;
+
+            @include mq-large {
+                height: 50vh;
+            }
         }
         @include mq-large {    
             min-height: 50vh;
-        height: 50vh;
+            height: 50vh;
         }
         @include mq-medium {    
             width:100vw; 
@@ -543,6 +555,13 @@ section.policy {
     margin-top: 190px;
     margin-bottom: 100px;
 
+    @include mq-large {    
+        padding-left: 25rem;
+        padding-right: 25rem;
+        padding-top: 15rem;
+        padding-bottom: 15rem;
+    }
+
     @include mq-medium {    
         margin-top: 90px;
         padding: 3rem;
@@ -556,10 +575,17 @@ section.policy {
     h2 {
         margin-bottom: 30px;
         font-size: 30px;
+
+        @include mq-smaller {    
+            font-size: 25px;
+        }
     }
     h3 {
         margin-bottom: 20px;
         font-size: 25px;
+        @include mq-smaller {    
+            font-size: 22px;
+        }
     }
     p {
         margin-bottom: 20px;
