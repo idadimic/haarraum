@@ -494,7 +494,7 @@ section.hours {
         .days {
             z-index: 50;
             @include mq-smaller {    
-                width: 80vw;
+                width: 85vw;
                 margin: auto;
             }
         }
@@ -502,6 +502,16 @@ section.hours {
             border-bottom: solid 1px #000;
             padding-top: 15px;
             padding-bottom: 15px;
+
+            @include mq-smaller {    
+                font-size: 16px; 
+            }
+
+            span.first {
+                @include mq-medium {    
+                    display: block; 
+                }
+            }
         }
         .first {
             padding-top: 0;
